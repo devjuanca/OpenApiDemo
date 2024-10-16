@@ -4,9 +4,9 @@ public static partial class OceanWeatherEndpoints
 {
     public static WebApplication MapOceansVersionTwoWeatherEndpoints(this WebApplication app)
     {
-        var group = app.MapGroup("/weather-api/v1/oceans/")
+        var group = app.MapGroup("/weather-api/v2/oceans/")
                        .WithTags("Ocean Weather Endpoints")
-                       .WithGroupName("v1");
+                       .WithGroupName("v2");
 
         group.MapGet("/forcast", () =>
         {

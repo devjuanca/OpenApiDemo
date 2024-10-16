@@ -17,10 +17,19 @@ public static class OpenApiRegister
 
                 return Task.CompletedTask;
             });
+        });
 
-            //options.AddDocumentTransformer<BearerSecuritySchemeTransformer>();
+        services.AddOpenApi("v2", options =>
+        {
+            options.AddDocumentTransformer((document, ctx, _) =>
+            {
+                document.Info.Title = "Weather API";
+                document.Info.Description = "An API with weather features.";
+                document.Info.Version = "v2";
+                document.Info.Contact = new Microsoft.OpenApi.Models.OpenApiContact { Name = "Admin", Email = "admin@admin.com" };
 
-            //options.AddDocumentTransformer<ApiKeySecuritySchemeTransformer>();
+                return Task.CompletedTask;
+            });
         });
 
         return services;
