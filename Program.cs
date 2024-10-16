@@ -1,0 +1,30 @@
+using DemoApiNet9;
+using DemoApiNet9.OpenApi;
+using DemoApiNet9.Services;
+using DemoApiNet9.V1;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddSingleton<WeatherRepository>();
+
+builder.Services.AddSingleton<WeatherService>();
+
+builder.Services.AddApplicationOpenApi();
+
+var app = builder.Build();
+
+app.UseHttpsRedirection();
+
+app.MapOpenApiUI();
+
+app.MapCitiesVersionOneWeatherEndpoints();
+
+app.MapCitiesVersionTwoWeatherEndpoints();
+
+app.MapOceansVersionOneWeatherEndpoints();
+
+app.MapOceansVersionTwoWeatherEndpoints();
+
+app.MapCommonEndpoints();
+
+app.Run();
