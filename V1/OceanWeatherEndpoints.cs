@@ -12,13 +12,15 @@ public static partial class OceanWeatherEndpoints
         {
             return Results.Ok();
 
-        }).WithDescription("Gets weather forcasts for all cities")
+        }).WithDescription("Gets weather forcasts for all oceans")
+          .WithSummary("Oceans Weather Forcast")
           .RequireAuthorization();
 
         group.MapGet("/forcast/{ocean}", (string ocean) =>
         {
             return Results.Ok();
         }).WithDescription("Gets an ocean weather forcast")
+          .WithSummary("Ocean Weather Forcast")
           .RequireAuthorization();
 
         return app;

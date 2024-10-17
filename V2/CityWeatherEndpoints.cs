@@ -17,6 +17,7 @@ public static partial class CityWeatherEndpoints
 
         }).Produces<List<WeatherForecast>>()
           .WithDescription("Gets weather forcasts for all cities")
+          .WithSummary("Cities Weather Forcast")
           .RequireAuthorization();
 
 
@@ -32,7 +33,9 @@ public static partial class CityWeatherEndpoints
             return Results.NotFound();
 
         }).Produces<WeatherForecast>()
-          .WithDescription("Gets a city weather forcast");
+          .WithDescription("Gets a city weather forcast")
+          .WithSummary("City Weather Forcast")
+          .RequireAuthorization();
 
         group.MapPost("/forecast", (CreateWeatherForecastCommand newforecast, WeatherService service) =>
         {
@@ -42,6 +45,7 @@ public static partial class CityWeatherEndpoints
 
         }).Produces(201)
           .WithDescription("Creates a city weather forecast")
+          .WithSummary("Creates Weather Forcast")
           .RequireAuthorization();
 
         group.MapDelete("/forecast", (string city, WeatherService service) =>
@@ -52,6 +56,7 @@ public static partial class CityWeatherEndpoints
 
         }).Produces(204)
           .WithDescription("Deletes a weather forcast")
+          .WithSummary("Deletes Weather Forcast")
           .RequireAuthorization();
 
         return app;

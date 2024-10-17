@@ -21,6 +21,8 @@ builder.Services.AddApplicationOpenApi();
 
 var app = builder.Build();
 
+app.UseStaticFiles();
+
 app.UseHttpsRedirection();
 
 app.MapOpenApiUI();
@@ -38,5 +40,7 @@ app.MapCommonEndpoints();
 app.UseAuthentication();
 
 app.UseAuthorization();
+
+app.MapShortCircuit(200, "/weather-api/assets/favicon-32.png");
 
 app.Run();

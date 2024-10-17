@@ -50,6 +50,7 @@ public static class OpenApiRegister
                .WithOpenApiRoutePattern("/weather-api/openapi/{documentName}.json")
                .WithDefaultHttpClient(ScalarTarget.CSharp, ScalarClient.HttpClient)
                .WithDefaultOpenAllTags(false)
+               .WithFavicon("/weather-api/assets/favicon-32.png")
                .WithTheme(ScalarTheme.DeepSpace);
         });
 
