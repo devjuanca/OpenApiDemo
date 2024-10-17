@@ -17,6 +17,8 @@ public static class OpenApiRegister
 
                 return Task.CompletedTask;
             });
+
+            options.AddDocumentTransformer<SecuritySchemeTransformer>();
         });
 
         services.AddOpenApi("v2", options =>
@@ -30,6 +32,8 @@ public static class OpenApiRegister
 
                 return Task.CompletedTask;
             });
+
+            options.AddDocumentTransformer<SecuritySchemeTransformer>();
         });
 
         return services;
@@ -46,9 +50,7 @@ public static class OpenApiRegister
                .WithOpenApiRoutePattern("/weather-api/openapi/{documentName}.json")
                .WithDefaultHttpClient(ScalarTarget.CSharp, ScalarClient.HttpClient)
                .WithDefaultOpenAllTags(false)
-               .WithTheme(ScalarTheme.DeepSpace)
-               .WithPreferredScheme("ApiKey")
-               .WithApiKeyAuthentication(x => x.Token = "weather-api-key");
+               .WithTheme(ScalarTheme.DeepSpace);
         });
 
         return app;
