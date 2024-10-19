@@ -41,7 +41,7 @@ public static class OpenApiRegister
 
     public static WebApplication MapOpenApiUI(this WebApplication app)
     {
-        app.MapOpenApi(pattern: "/weather-api/openapi/{documentName}.json");
+        app.MapOpenApi(pattern: "/weather-api/openapi/{documentName}.json").AllowAnonymous();
 
         app.MapScalarApiReference(opt =>
         {

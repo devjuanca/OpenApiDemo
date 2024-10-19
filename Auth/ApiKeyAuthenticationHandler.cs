@@ -16,6 +16,11 @@ public class ApiKeyAuthenticationHandler(
 
     protected override Task<AuthenticateResult> HandleAuthenticateAsync()
     {
+        if (Request.Path.StartsWithSegments("/weather-api/scalar") || Request.Path.StartsWithSegments("/weather-api/openapi"))
+        {
+            return Task.FromResult(AuthenticateResult.NoResult());
+        }
+
         if (!Request.Headers.TryGetValue(ApiKeyHeaderName, out var apiKeyHeaderValues))
         {
             return Task.FromResult(AuthenticateResult.Fail("Missing API Key"));
