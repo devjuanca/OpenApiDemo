@@ -1,6 +1,6 @@
-﻿using DemoApiNet9.Dto;
+﻿using DemoOpenApiNet9.Dto;
 
-namespace DemoApiNet9.Services;
+namespace DemoOpenApiNet9.Services;
 
 public class WeatherRepository
 {

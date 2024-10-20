@@ -1,4 +1,4 @@
-﻿namespace DemoApiNet9;
+﻿namespace DemoOpenApiNet9;
 
 public static class CommonEndpoints
 {

@@ -1,5 +1,5 @@
-﻿using DemoApiNet9.Dto;
-using DemoApiNet9.Services;
+﻿using DemoOpenApiNet9.Dto;
+using DemoOpenApiNet9.Services;
 
 namespace DemoApiNet9.V1;
 

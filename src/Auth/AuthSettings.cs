@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 
-namespace DemoApiNet9.Auth;
+namespace DemoOpenApiNet9.Auth;
 
 public static class AuthSettings
 {

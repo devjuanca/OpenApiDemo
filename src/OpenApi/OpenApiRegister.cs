@@ -1,6 +1,6 @@
 ﻿using Scalar.AspNetCore;
 
-namespace DemoApiNet9.OpenApi;
+namespace DemoOpenApiNet9.OpenApi;
 
 public static class OpenApiRegister
 {
@@ -19,6 +19,7 @@ public static class OpenApiRegister
             });
 
             options.AddDocumentTransformer<SecuritySchemeTransformer>();
+
         });
 
         services.AddOpenApi("v2", options =>

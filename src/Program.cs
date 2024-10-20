@@ -1,8 +1,8 @@
-using DemoApiNet9;
-using DemoApiNet9.Auth;
-using DemoApiNet9.OpenApi;
-using DemoApiNet9.Services;
 using DemoApiNet9.V1;
+using DemoOpenApiNet9;
+using DemoOpenApiNet9.Auth;
+using DemoOpenApiNet9.OpenApi;
+using DemoOpenApiNet9.Services;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 

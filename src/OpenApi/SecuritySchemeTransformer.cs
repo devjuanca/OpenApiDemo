@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.OpenApi;
 using Microsoft.OpenApi.Models;
 
-namespace DemoApiNet9.OpenApi;
+namespace DemoOpenApiNet9.OpenApi;
 
 internal sealed class SecuritySchemeTransformer : IOpenApiDocumentTransformer
 {
